@@ -1,0 +1,7 @@
+{% extends "index.html.twig" %}
+
+{% block section %}
+	<h2>Profil de {{user.getPseudo()}}</h2>
+	<p>Son nombre de ventes est de {{user.getNbrVentes()}}</p>
+	<p>Inscrit depuis le {{user.getDateInscr()}}</p>
+ {% endblock %}

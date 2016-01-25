@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+ <title>Trokotaku - Site d'enchère GEEK & Otaku | Tarn 81 Castres</title>
+ <meta charset="UTF-8" />
+ <link href="stylesheets/screen.css" rel="stylesheet" media="screen" type="text/css" />
+ <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <header>
+  	<h1><a href="index.php">Trokotaku - Site d'Enchère Geek|Otaku</a></h1>
+  		{% if accessuser == "non" %}
+  	<div id="profil">
+  		<ul>
+			<li>Connectez-vous
+				<div>
+					<form action="connexion.php" method="POST">
+						<input type="text" name="pseudo" placeholder="Pseudo">
+						<input type="password" name="mdp" placeholder="Mot de passe">
+						<input type="submit" name="connexion" value="Connexion">
+						<a href="index.php?action=inscription">S'enregistrer</a>
+					</form>
+				</div>
+			</li>
+		</ul>
+	{% else %}
+	<a href="index.php?action=add" class="btn" id="ajout">Ajouter une offre</a>
+  	<div id="profil">
+		<ul>
+			<li>Bonjour {{userco.getPseudo()}}
+				<div>
+					<a href="profil.php?action=profil">Mon profil</a>
+					<a href="connexion.php?deconnexion">Deconnexion</a>
+			   </div>
+		   </li>
+	   </ul>
+	{% endif %}
+		
+  	</div>
+  </header>
+<nav>	
+	{% block menu %}
+	{% endblock %}
+</nav>
+<section id="container">
+	{% block section %}
+		{{message}}	
+	{% endblock %}
+</section>
+
+<footer>
+	{% block footer %}{% endblock %}
+	{% block javascripts %}
+	<script src="javascripts/functions.js"></script>
+	{% endblock %}
+</footer>
+
+</body>
+</html>

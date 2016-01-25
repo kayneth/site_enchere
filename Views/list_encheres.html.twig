@@ -1,0 +1,22 @@
+{% extends "index.html.twig" %}
+
+{%block section%}
+<h2>Liste des enchères sur l'objet {{obj.getNom()}}</h2>
+
+<table>
+	<thead>
+		<tr>
+			<th>Qui ?</th>
+			<th>Combien ?</th>
+		</tr>
+	</thead>
+	<tbody>
+		{%for ench in encheres %}
+			<tr>
+				<td>Utilisateur {{ench.getIdUser()}}</td>
+				<td>{{ench.getSomme()}} €</td>
+			</tr>
+		{% endfor %}
+	</tbody>
+</table>
+{%endblock%}

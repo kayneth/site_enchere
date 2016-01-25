@@ -1,0 +1,28 @@
+@media screen and (min-width: 650px){
+
+	.btn{
+		@include transition(.2s all);
+		&:hover{
+			background: $blue;
+			color: #FFF;
+		}
+	}
+
+	#listObj{
+		text-align: center;
+		li{
+			display: inline-block;
+			width: 40%;
+			vertical-align: top;
+		}
+	}
+
+	#presObj{
+		text-align: center;
+		.btn{
+			display: inline-block;
+			width: 25%;
+			margin-left: -4px;
+		}
+	}
+}

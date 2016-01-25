@@ -1,0 +1,23 @@
+{% extends "index.html.twig" %}
+
+
+{%block section%}
+{% if accessuser == "oui" %}
+	<h2>Ajouter un objet : Formulaire</h2>
+	<form action="index.php?action=addobj" method="POST" enctype="multipart/form-data" id="formAjout">
+		<input type="text" name="nom" placeholder="Nom de l'objet"><br>
+		<select name="idcategorie">
+			{%for cat in cats%}
+			<option value="{{cat.getIdCategorie()}}"> {{cat.nom}} </option>
+			{%endfor%}
+		</select><br>
+		<input type="number" name="prixini" min="0" placeholder="Prix initial"><br>
+		<input type="datetime-local" name="datefin" placeholder="Date de fin de l'enchère"><br>
+		<textarea name="description" id="" cols="30" rows="10" placeholder="Description de l'objet"></textarea><br>
+		<input type="file" name="photo"><br>
+		<input type="submit" value="Mettre en vente">
+	</form>
+{% else %}
+	<p class="info">Vous n'êtes pas autorisés à accéder à cette page. :) <a href="index.php?action=inscription">Inscrivez-vous</a> pour revenir.</p>	
+{% endif %}
+{%endblock%}

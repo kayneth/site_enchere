@@ -1,0 +1,10 @@
+{% extends "index.html.twig" %}
+
+{%block section%}
+<h2>Enchère sur l'objet {{obj.getNom()}}</h2>
+<p>{{user.getPseudo()}}, si vous souhaitez enchèrir sur {{obj.getNom()}}, complétez ce formulaire :</p>
+<form action="index.php?action=validenchere" method="POST">
+	<input type="number" name="enchere" min="0">
+	<input type="submit" value="Enchérir">
+</form>
+{%endblock%}

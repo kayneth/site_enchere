@@ -1,0 +1,191 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body, html{
+	max-width: 100%;
+	font-family: 'Open Sans', sans-serif;
+}
+
+h2{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 10px;
+	background: $blue;
+	color: white;
+}
+
+a{
+	text-decoration: none;
+	color: #939EA7;
+}
+
+input {
+	border: none;
+	background: none;
+	color :  #656565;
+	font-size: 1.2em;
+}
+
+.btn{
+	display: block;
+	padding: 10px;
+	background: white;
+	color: black;
+}
+
+header{
+	background: $blue;
+	text-align: center;
+	color: white;
+	h1{
+		padding: 10px;
+	}
+}
+
+#profil{
+	padding: 10px;
+	a{
+		display: block;
+		padding: 10px;
+	}
+	form{
+		input{
+			@extend .btn;
+			padding: 10px;
+			margin: 10px auto;
+		}
+	}
+}
+
+#search{
+	text-align: center;
+	input{
+		@extend .btn;
+		display: inline-block;
+		width: 80%;
+		margin-top: 5px;
+		padding: 10px;
+		vertical-align: middle;
+		border: 2px solid $blue;
+		background: #FFF;
+	}
+	select{
+		display: inline-block;
+		width: 80%;
+		margin-top: 5px;
+		padding: 10px;
+		border: 2px solid $blue;
+		background: $blue;
+		color: white;
+		& option{
+			background: white;
+			color: $blue;
+		}
+	}
+}
+
+.info{
+	text-align: center;
+	padding: 10px;
+}
+
+#listObj{
+	width: 100%;
+	li{
+		display: block;
+		width: 100%;
+		min-height: 375px;
+		overflow: hidden;
+		margin-bottom: 20px;
+		background: $blue;
+		border: 2px solid $blue;
+		h3{
+			padding: 20px;
+			background: #FFF;
+			a{
+				color: $blue;
+			}
+		}
+		img{
+			width: 100%;
+		}
+		.infosObj{
+			padding: 10px;
+			color: #FFF;
+			p{
+				margin: 10px;
+			}
+		}
+	}
+}
+
+#presObj{
+	img{
+		max-width: 100%;
+	}
+	p{
+		padding: 10px;
+	}
+	.btn{
+		display: inline-block;
+		width: 100%;
+		border: 2px solid $blue;
+		margin-top: 10px;
+		text-align: center;
+	}
+	h3{
+		padding: 20px;
+		background: $blue;
+		color: #FFF;
+	}
+}
+
+.formInscr{
+	input{
+		display: block;
+		margin: 10px auto;
+		padding: 20px;
+		border: 2px solid $blue;
+	}
+	label{
+		display: block;
+		margin: 5px auto;
+		padding: 10px;
+		width: 40%;
+		text-align: center;
+	}
+}
+
+#formAjout{
+	@extend .formInscr;
+	textarea, select{
+		display: block;
+		margin: 10px auto;
+		padding: 20px;
+		border: 2px solid $blue;
+	}
+}
+
+#pagination{
+	background: $blue;
+	text-align: center;
+	padding: 10px;
+	a{
+		color: #FFF;
+		margin-left: 10px;
+	}
+}
+
+table{
+	margin: 0 auto;
+	width: 80%;
+	tr{
+		td, th{
+			text-align: center;
+			border: 2px solid $blue;
+			padding: 10px;
+		}
+	}
+}
+

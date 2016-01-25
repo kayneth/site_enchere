@@ -1,0 +1,14 @@
+{% extends "index.html.twig" %}
+
+  {% block section %}
+	<h2>Page d'inscription</h2>
+
+	<form method="POST" action="connexion.php" class="formInscr">
+		<input type="text" name="nom" value="" placeholder="Votre nom"/>
+		<input type="text" name="prenom" value="" placeholder="Votre prénom"/>
+		<input type="text" name="pseudo" value="" placeholder="Votre pseudo"/>
+		<input type="password" name="mdp" value="" placeholder="Votre mot de passe"/>
+		<input type="mail" name="mail" value="" placeholder="Votre mail"/>
+		<input type="submit" name="inscription" value="Inscrivez-vous"/>
+	</form>
+  {% endblock %}

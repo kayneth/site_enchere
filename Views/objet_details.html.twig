@@ -1,0 +1,30 @@
+{% extends "index.html.twig" %}
+
+{%block section%}
+	<div id="presObj">
+		<h2>{{obj.getNom()}} de 
+			<a href="index.php?action=profil&iduser={{user.getIdUser()}}">
+				{{user.getPseudo()}}
+			</a>
+		</h2>
+		<div>
+			{% if enchere.getSomme() > 0 %}
+				<p>
+					Prix actuel : {{enchere.getSomme()}} € (Son prix initial était de {{obj.getPrixIni()}} €)
+				</p>
+				<a class="btn" href="index.php?action=listEncheres&idobj={{obj.getIdObj()}}">Liste des enchères</a>
+			{% else %}
+				<p>
+					Prix actuel : {{obj.getPrixIni()}} €
+				</p>
+			{% endif %}
+			<a href="index.php?action=encherir&idobj={{obj.getIdObj()}}" class="btn">Encherir</a>
+		</p>
+		<img src="images/{{obj.getPhoto()}}" alt="{{obj.getNom()}} - {{obj.getDescription()}}" title="{{obj.getNom()}} - {{obj.getDescription()}}"/>
+		<p>L'enchère sur ce produit a débuté le {{obj.getDateDebut()}} et se termine le {{obj.getDateFin()}}</p>
+		<p><span class="tps">{{obj.datefin()}}</span> </p>
+		<p>Catégorie : {{cat.getNom()}}</p>
+		<h3>Description : </h3>
+		<p>{{obj.getDescription()}}</p>
+	</div>
+{%endblock%}

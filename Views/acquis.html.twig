@@ -1,0 +1,27 @@
+{% extends "index_user.html.twig" %}
+
+
+  {% block section %}
+	<h2>Liste des objets remportés !</h2>
+	<ul id="listObj">
+	{% for obj in objs %}
+		<li>
+			<h3>
+				<a href="index.php?action=details&idobj={{obj.getIdObj()}}&iduser={{obj.getIdUser()}}">
+					{{obj.getNom()}}
+				</a>
+			</h3>
+			<div class="img-container">
+				<a href="index.php?action=details&idobj={{obj.getIdObj()}}&iduser={{obj.getIdUser()}}">
+					<img src="images/{{obj.getPhoto()}}" alt="{{obj.getNom()}} - {{obj.getDescription()}}" title="{{obj.getNom()}} - {{obj.getDescription()}}"/>
+				</a>
+			</div>
+			<div class="infosObj">
+				<p>
+					Prix auquel vous l'avez acquis : {{obj.getPrix()}} € (Son prix initial était de {{obj.getPrixIni()}} €)
+				</p>
+			</div>
+		</li>
+	{% endfor %}
+	</ul>
+ {% endblock %}

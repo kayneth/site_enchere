@@ -1,0 +1,21 @@
+{% extends "index.html.twig" %}
+
+{%block section%}
+{% if accessuser == "oui" %}
+	<h2>Nouvelle enchère sur {{obj.getNom()}}</h2>
+
+	<form action="index.php?action=validenchere" method="POST">
+
+	{% if enchere.getSomme() > 0 %}	
+			<input type="number" name="somme" min="{{enchere.getSomme()}}" placeholder="Votre offre ici">
+	{% else %}
+			<input type="number" name="somme" min="{{obj.getPrixIni()}}" placeholder="Votre offre ici">
+	{% endif %}
+		<input type="hidden" name="idobj" value="{{obj.getIdObj()}}">
+		<input type="hidden" name="iduser" value="{{userco.getIdUser()}}">
+		<input type="submit">
+	</form>
+{% else %}
+	<p class="info">Vous n'êtes pas autorisés à accéder à cette page. :) <a href="index.php?action=inscription">Inscrivez-vous</a> pour revenir.</p>	
+{% endif %}
+{%endblock%}

@@ -1,0 +1,22 @@
+@media screen and (min-width: 1150px){
+	#listObj{
+		li{
+			width: 20%;
+		}
+	}
+
+	#presObj{
+		text-align: center;
+		p{
+			padding: 10px;
+		}
+		h3{
+			padding: 20px;
+			background: $blue;
+			color: #FFF;
+		}
+		img{
+			max-width: 50%;
+		}
+	}
+}

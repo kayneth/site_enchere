@@ -1,0 +1,11 @@
+{% extends "index_user.html.twig" %}
+{% block section %}
+	<h2>Modifier votre profil ci-dessous</h2>
+	<form action="profil.php?action=envoiModifProfil" method="POST" class="formInscr">
+		<label for="">Votre nom : </label><input type="text" name="nom" value="{{userco.getNom()}}">
+		<label for="">Votre prénom : </label><input type="text" name="prenom" value="{{userco.getPrenom()}}">
+		<label for="">Votre pseudo : </label><input type="text" name="pseudo" value="{{userco.getPseudo()}}">
+		<label for="">Votre mail : </label><input type="mail" name="mail" value="{{userco.getMail()}}">
+		<input type="submit" name="modif" value="modifier">
+	</form>
+{% endblock %}

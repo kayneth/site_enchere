@@ -1,0 +1,40 @@
+{% extends "index_site.html.twig" %}
+{% block section %}
+	<h2>Les résultats de votre recherche 
+		{%if msg['objNom'] != '' %}
+			pour  "{{msg['objNom']}}"
+		{% endif %}
+		{%if cat != '' %}
+			dans la catégorie {{cat.getNom()}}
+		{% endif %}
+		
+	</h2>
+	<ul id="listObj">
+	{% for obj in objs %}
+		<li>
+			<h3>
+				<a href="index.php?action=details&idobj={{obj.getIdObj()}}&iduser={{obj.getIdUser()}}">
+					{{obj.getNom()}}
+				</a>
+			</h3>
+			<div class="img-container">
+				<a href="index.php?action=details&idobj={{obj.getIdObj()}}&iduser={{obj.getIdUser()}}">
+					<img src="images/{{obj.getPhoto()}}" alt="{{obj.getNom()}} - {{obj.getDescription()}}" title="{{obj.getNom()}} - {{obj.getDescription()}}"/>
+				</a>
+			</div>
+			<div class="infosObj">
+				<p>
+					{% if obj.getPrix() > 0 %}
+						Prix actuel : {{obj.getPrix()}} € (Son prix initial était de {{obj.getPrixIni()}} €)
+					{% else %}
+						Prix actuel : {{obj.getPrixIni()}} €
+					{% endif %}
+				</p>
+				<p class="tps">{{obj.datefin()}}</p>
+			</div>
+		</li>
+	{% endfor %}
+	</ul>
+
+	
+ {% endblock %}

@@ -1,0 +1,16 @@
+{% extends "index.html.twig" %}
+	{% block menu %}
+		<ul id="navProfil">
+			<li><a href="profil.php?action=modifProfil">Modifier mon profil</a></li>
+			<li><a href="profil.php?action=objetsachete">Mes objets acquis</a></li>
+			<li><a href="profil.php?action=enchereCours">Mes enchères en cours</a></li>
+		</ul>
+	{% endblock %}
+
+	{% block section %}
+		{% if accessuser == "oui" %}
+			<p class="info">{{msg}}</p>
+		{% else %}
+		<p>Vous n'êtes pas autorisés à accéder à cette page. :) <a href="index.php?action=inscription">Inscrivez-vous</a> pour revenir.</p>	
+		{% endif %}
+	{% endblock %}
