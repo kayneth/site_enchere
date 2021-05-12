@@ -7,4 +7,4 @@ Les controleurs sont dans Models et les Modèles sont dans les Modules (lors du 
 
 Style réalisé à la main également avec SASS
 
-Vous pouvez le tester ici : http://vsp149406.nfrance.com/~16_temboucti/php/2a/enchere_partX/index.php
+Vous ne pouvez plus le tester ici : http://vsp149406.nfrance.com/~16_temboucti/php/2a/enchere_partX/index.php
